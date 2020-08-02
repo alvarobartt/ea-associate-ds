@@ -130,3 +130,6 @@ dmypy.json
 
 # PreProcessed Documents
 PreProcessedDocuments.jsonl
+
+# MUSE Word Embeddings
+research/data/*.vec
