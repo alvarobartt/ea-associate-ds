@@ -54,7 +54,11 @@ and describe them.
 
 ## Roadmap
 
-bla bla bla
+Before proceeding with the explanation and conclusions of every NLP tasks researched/developed for the project,
+we will start by specifying the roadmap since the start day which was on Friday, July 31 until the end date of 
+the project which was on Tuesday, August 4.
+
+!["NLP Roadmap"](imgs/roadmap.png)
 
 ---
 
@@ -101,7 +105,7 @@ each single document per context, where it showed that Wikipedia is the most pop
 the biggest amount. Also both the APR and the Conference papers are the ones with fewer characters, and the PAN11
 texts are between the Wikipedia and the other texts.
 
-__Reference__: [research/01 - Data Exploration.pdf](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/01%20-%20Data%20Exploration.pdf)
+__Reference__: [Data Exploration](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/01%20-%20Data%20Exploration.pdf)
 
 ---
 
@@ -191,31 +195,76 @@ data compared to the raw one.
 
 !["WordClouds Comparison"](imgs/wordcloud-comparison.png)
 
-__Reference__: [research/02 - Data Preprocessing.pdf](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/02%20-%20Data%20Preprocessing.pdf)
+__Reference__: [Data Preprocessing](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/02%20-%20Data%20Preprocessing.pdf)
 
 ---
 
 ## Text Classification
 
+Since we are facing a NLP Text Classification problem which consits on classifying multilingual data into its context
+regardless the language in which the text is written.
 
-!["Text Classification Models"](imgs/text_classification_models.png)
+First of all, we need to define a vectorizer so as to transform the input text (already preprocessed) into a vector 
+and then train a model which is being fitted with those vectors. In this case we will be using the TF-IDF Vectorizer 
+since it is the most suitable towards tackling this problem, since it ponderates the number of occurrences of each 
+word inside a document with the number of occurrences of that word among all the other documents, so as to identify 
+the relevance of a word appearing in a document towards later predict the context in which that concrete piece 
+of text should be classified. 
+
+Once the vectorization is completed we should just decide which classification model are we going to use depending 
+on both the scope and the model's requirements/limitations. In this case, since we decided to test some different 
+classification models, we just tested them over random stratified folds so as to see which of them performed better.
+
+!["Text Classification Models"](imgs/text-classification-models.png)
+
+So on, after training some different classification model over some random stratified data shuffling folds, we
+decided to proceed using the `LinearSVC` model since it seemed to be the most consistent one in both time and
+accuracy. Then, the resulting Pipeline looks as it follows:
+
+```python
+from sklearn.pipeline import Pipeline
+
+pipeline = Pipeline([
+    ('vect', TfidfVectorizer(min_df=5)),
+    ('clf', LinearSVC())
+])
+```
 
 __References__:
 
-* [research/03 - Text Classification Model.pdf](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/03%20-%20Text%20Classification%20Model.pdf)
-* [research/04 - Text Classification Model Testing.pdf](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/04%20-%20Text%20Classification%20Model%20Testing.pdf)
+* [Text Classification Model](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/03%20-%20Text%20Classification%20Model.pdf)
+* [Text Classification Model Testing](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/04%20-%20Text%20Classification%20Model%20Testing.pdf)
 
 ---
 
 ## Topic Modelling
 
+In this concrete case, we will be using the preprocessed data so as to fit a Topic Modelling algorithm in order
+to discover the inner insights of the data and detect the hidden topics in order to have a deeper understanding 
+on what is data about and into which topics is the data separated.
 
-!["Topic Modelling"](imgs/topic_modelling.png)
+NLP Topic Modelling is a relevant part of the analysis, since it allows us to gain more insights about the
+dataset we have, but since it is unsupervised, it requires us to tune the parameters until we can point out useful
+conclusions which make sense from the given dataset.
+
+So on, we used the LDA (Latent Dirichlet Allocation) algorithm to identify the hidden topics in the dataset, so as 
+use case we started the Topic Modelling just with English texts from Wikipedia, so as to test if it worked as expected
+and also to evaluate the results of one of the most populated contexts.
+
+!["Topic Modelling"](imgs/topic-modelling.png)
+
+As we can see above, after a lot of tuning five topics were clearly identified, so we tried to establish a 
+relationship between the hidden topics and real topics such as Sports for example, from the top terms that were
+present in those topics. And, the identified topics in the image above are (in ascending order by topic ID): 
+Politics/History, Music/Movies/Entertainment, Industry/Research/Chemistry, Sports/Games and Technology/Software.
+
+Topic Modelling has been applied and analysed for every possible combination of context and language, and it has 
+been deeply analysed in the Jupyter Notebooks.
 
 __References__:
 
-* [research/05 - Topic Modelling.html](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/05%20-%20Topic%20Modelling.html)
-* [research/06 - Topic Modelling Analysis.html](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/06%20-%20Topic%20Modelling%20Analysis.html)
+* [Topic Modelling](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/05%20-%20Topic%20Modelling.html)
+* [Topic Modelling Analysis](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/06%20-%20Topic%20Modelling%20Analysis.html)
 
 ---
 
@@ -239,7 +288,7 @@ of documents, with also pretty satisfactory results evaluated in a supervised wa
 To sum up, mention that even though the project tasks have been achieved and some extra points have been 
 made, there is still much work ahead, so later on this Notebook, the Future Work will be defined.
 
-__Reference__: [research/07 - Conclusions & Future Work.pdf](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/07%20-%20Conclusions%20%26%20Future%20Work.pdf)
+__Reference__: [Conclusions & Future Work](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/07%20-%20Conclusions%20%26%20Future%20Work.pdf)
 
 ---
 
@@ -265,6 +314,8 @@ input one but for the model it would just be a single language. Also, when deplo
 production environment a reliable layer of language detection should be applied so as to either apply 
 the word embeddings if the text is written in French or Spanish or discard the text if it is neither 
 English, Spanish nor French.
+
+__Reference__: [Conclusions & Future Work](https://github.com/alvarobartt/ea-associate-ds/blob/master/research/07%20-%20Conclusions%20%26%20Future%20Work.pdf)
 
 ---
 
