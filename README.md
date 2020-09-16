@@ -328,3 +328,13 @@ __Reference__: [Conclusions & Future Work](https://github.com/alvarobartt/ea-ass
 3. [Exploiting similarities among languages for machine translation. Tomas Mikolov, Quoc V. Le and Ilya Sutskever. In the Computation and Language (cs.CL)](https://arxiv.org/abs/1309.4168)
 
 4. [_Language-specific models in multilingual topic tracking. Leah S. Larkey, Fangfang Feng, Margaret Connell and Victor Lavrenko, In the SIGIR '04: Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval_](https://dl.acm.org/doi/abs/10.1145/1008992.1009061)
+
+---
+
+## Personal Opinion
+
+This assignment was both rewarding and demanding, since the time was very limited and the multi-lingual problem was not my expertise so I had to do some extra research, which indeed was profitable as I gained new knowledge over that topic. Anyway, both the HR and the Technical Team have been so nice during all the process and the feedback on the assignment was far from good, as there is a lot of work in here.
+
+__So feel free to use this repository as a sample NLP assignment template, since this is the format that the companies expect from a Data Scientist, Machine Learning Engineer, etc.__
+
+P.S.: I had to quit the hiring process since I received a job opportunity that fitted better with me, so I quit before proceeding with the last interview.
