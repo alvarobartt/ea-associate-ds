@@ -49,6 +49,9 @@ and describe them.
 * [Future Work](#future-word)
 * [References](#references)
 
+*[Personal Opinion](#personal-opinion)
+*[EA's Expected Way to Tackle](#eas-expected-way-to-tackle)
+
 
 ---
 
@@ -338,3 +341,11 @@ This assignment was both rewarding and demanding, since the time was very limite
 __So feel free to use this repository as a sample NLP assignment template, since this is the format that the companies expect from a Data Scientist, Machine Learning Engineer, etc.__
 
 P.S.: I had to quit the hiring process since I received a job opportunity that fitted better with me, so I quit before proceeding with the last interview.
+
+---
+
+## EA's Expected Way to Tackle
+
+The approach I developed was nice and fully covered the scope of the assignment, since the Story Telling part was really relevant for EA and it is one of the most strong points in my assignment. Anyway, the EA's Location Team based in Madrid (Spain) and Cologne (Germany) was expecting the usage of [Helsinki NLP](https://huggingface.co/Helsinki-NLP) so as to translate all the texts into Spanish so as to tackle the Multi-Lingual Multi-Context problem just as a Multi-Context problem.
+
+They proposed the usage of [huggingface/transformers](https://github.com/huggingface/transformers) in order to translate the texts as it can be shown in this example: https://huggingface.co/transformers/model_doc/marian.html#multilingual-models, which uses [MarianMT](https://huggingface.co/transformers/model_doc/marian.html) to load the Helsinki Machine Translation Models. 
