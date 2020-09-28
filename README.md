@@ -48,9 +48,8 @@ and describe them.
 * [Conclusions](#conclusions)
 * [Future Work](#future-word)
 * [References](#references)
-
-*[Personal Opinion](#personal-opinion)
-*[EA's Expected Way to Tackle](#eas-expected-way-to-tackle)
+* [Personal Opinion](#personal-opinion)
+* [EA's Expected Way to Tackle](#eas-expected-way-to-tackle)
 
 
 ---
