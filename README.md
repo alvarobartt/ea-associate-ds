@@ -1,4 +1,4 @@
-# Electronic Arts (EA) Assignment for: Associate Data Scientist
+# Electronic Arts (EA) Assignment for: NLP Associate Data Scientist
 
 <img src="https://media-exp1.licdn.com/dms/image/C561BAQFjp6F5hjzDhg/company-background_10000/0?e=2159024400&v=beta&t=OfpXJFCHCqdhcTu7Ud-lediwihm0cANad1Kc_8JcMpA">
 
