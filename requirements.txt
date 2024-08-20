@@ -1,4 +1,4 @@
-nltk==3.5
+nltk==3.9
 scikit-learn==0.23.1
 pyLDAvis==2.1.2
 gensim==3.8.3
